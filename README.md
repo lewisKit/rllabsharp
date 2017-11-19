@@ -30,6 +30,15 @@ python algo_gym_stub.py --env_name Hopper-v1 --algo_name qprop --qprop_eta_optio
 
 ```
 
+## Citations
+If you find this repository helpful, please cite following papers:
+- Hao Liu\*, Yihao Feng\*, Yi Mao, Dengyong Zhou, Jian Peng, Qiang Liu.(*: equal contribution) "[Sample-efficient Policy Optimization with Stein Control Variate](https://arxiv.org/pdf/1710.11198.pdf)". arXiv:1710.11198.
+
+- Shixiang Gu, Timothy Lillicrap, Zoubin Ghahramani, Richard E. Turner, Sergey Levine. "[Q-Prop: Sample-Efficient Policy Gradient with an Off-Policy Critic](https://arxiv.org/abs/1611.02247)" Proceedings of the International Conference on Learning Representations (ICLR), 2017. 
+
+- Yan Duan, Xi Chen, Rein Houthooft, John Schulman, Pieter Abbeel. "[Benchmarking Deep Reinforcement Learning for Continuous Control](http://arxiv.org/abs/1604.06778)". _Proceedings of the 33rd International Conference on Machine Learning (ICML), 2016._
+
+
 ## Feedbacks
 Currently the code is a little messy, we will clean it and make it easier for test soon. If you have any questions about the code or the paper, please feel free to contact [Yihao Feng](yihaof95@gmail.com) or [Hao Liu](uestcliuhao@gmail.com).
 
