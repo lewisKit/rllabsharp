@@ -15,7 +15,7 @@ Please follow the basic installation instructions in [rllab documentation](https
 - `MuJoCo`
 
 ## Running Experiments
-We provide three different Phi structures(linear, quadratic, mlp) and two different Phi optimization methods(FitQ and MinVar) in the repository. Optional flags are defined in [launcher_utils.py](sandbox/rocky/tf/launchers) and here are some running examples:
+We provide three different Phi structures(linear, quadratic, mlp) and two different Phi optimization methods(FitQ and MinVar) in the repository. Optional flags are defined in [launcher_utils.py](sandbox/rocky/tf/launchers/launcher_utils.py) and here are some running examples:
 
 ```sh
 cd sandbox/rocky/tf/launchers
@@ -40,5 +40,5 @@ If you find this repository helpful, please cite following papers:
 
 
 ## Feedbacks
-Currently the code is a little messy, we will clean it and make it easier for test soon. If you have any questions about the code or the paper, please feel free to contact [Yihao Feng](yihaof95@gmail.com) or [Hao Liu](uestcliuhao@gmail.com).
+Currently the code is a little messy, we will clean it and make it easier for test soon. If you have any questions about the code or the paper, please feel free to contact [Yihao Feng](mailto:yihaof95@gmail.com) or [Hao Liu](mailto:uestcliuhao@gmail.com).
 
