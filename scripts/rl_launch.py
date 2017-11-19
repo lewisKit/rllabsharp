@@ -6,10 +6,10 @@ import tempfile
 import click
 
 AMI_MAP = {
-    "us-east-1": "XXX",
+    "us-east-1": "xxx",
 }
 CODE_URL = {
-    'rllabsharp':'xxx',
+    'rllabsharp':'xx',
     'mergerllab': 'xxx'
 }
 

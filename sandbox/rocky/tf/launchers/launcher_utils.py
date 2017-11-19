@@ -80,12 +80,13 @@ flags.DEFINE_string('pf_hidden_sizes', '100x100', 'Sizes of pf hidden layers.')
 flags.DEFINE_string('pf_phi_lam_option', 'ones', 'Eta multiplier for adaptive control variate')
 flags.DEFINE_integer('pf_iters', 400, 'iteration of stein variance reduction for phi function updates')
 flags.DEFINE_float('pf_learning_rate', 1e-3, 'learning rate of stein variance reduction for phi function updates')
-flags.DEFINE_string('pf_cls', 'Qprop', 'Phi functions structure')
+flags.DEFINE_string('pf_cls', 'linear', 'Phi functions structure')
 flags.DEFINE_string('vs_form', None, 'if using vs as part of phi')
 flags.DEFINE_bool('use_gradient_vr', True, 'choice of variance reduction')
 
-if not oos.path.exists('dartml_data'):
+if not os.path.exists('dartml_data'):
     os.mkdir('dartml_data')
+
 
 dir_name = os.path.join("dartml_data/", FLAGS.algo_name+'-'+FLAGS.env_name+'-'+str(FLAGS.seed))+'-batch_size='+str(FLAGS.batch_size)+'-learning_rate='+str(FLAGS.learning_rate)+'-max_length=1000'
 

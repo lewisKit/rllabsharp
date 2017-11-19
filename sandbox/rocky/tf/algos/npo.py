@@ -6,9 +6,9 @@ from sandbox.rocky.tf.optimizers.penalty_lbfgs_optimizer import PenaltyLbfgsOpti
 from sandbox.rocky.tf.algos.batch_polopt import BatchPolopt
 from sandbox.rocky.tf.misc import tensor_utils
 
-from sandbox.rocky.tf.phi_functions.continuous_linear_phi_function import ContinousQPropPhiFunction
-from sandbox.rocky.tf.phi_functions.continous_quadratic_phi_function import ContinousQuadraticPhiFunction
-from sandbox.rocky.tf.phi_functions.continous_nn_phi_function import ContinousMLPPhiFunction
+from sandbox.rocky.tf.phi_functions.continuous_linear_phi_function import ContinuousLinearPhiFunction
+from sandbox.rocky.tf.phi_functions.continuous_quadratic_phi_function import ContinuousQuadraticPhiFunction
+from sandbox.rocky.tf.phi_functions.continuous_nn_phi_function import ContinuousMLPPhiFunction
 
 import tensorflow as tf
 import gc
@@ -147,7 +147,7 @@ class NPO(BatchPolopt):
                 dtype=tf.float32,
             )
 
-            if isinstance(self.pf, ContinousQPropPhiFunction):
+            if isinstance(self.pf, ContinuousLinearPhiFunction):
 
                 phival = self.pf.get_e_phival_sym(obs_var, self.policy, 
                                 gradwrtmu=True, deterministic=True)
@@ -157,7 +157,7 @@ class NPO(BatchPolopt):
                 stein_phi = self.pf.get_phi_bar_sym(obs_var, 
                         action_var, self.policy)
             
-            elif isinstance(self.pf, ContinousQuadraticPhiFunction):
+            elif isinstance(self.pf, ContinuousQuadraticPhiFunction):
                 dist_info = self.policy.dist_info_sym(obs_var)
                 mean = dist_info["mean"]
                 log_std = dist_info["log_std"]
@@ -173,7 +173,7 @@ class NPO(BatchPolopt):
                                 tf.reduce_mean(var_loss)
                 stein_phi = self.pf.get_phival_sym(obs_var, action_var)
             
-            elif isinstance(self.pf, ContinousMLPPhiFunction):
+            elif isinstance(self.pf, ContinuousMLPPhiFunction):
                 dist_info = self.policy.dist_info_sym(obs_var)
                 mean = dist_info['mean']
                 log_std = dist_info['log_std']

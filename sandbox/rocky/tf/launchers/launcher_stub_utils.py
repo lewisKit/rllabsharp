@@ -4,7 +4,6 @@ import tensorflow as tf
 from sandbox.rocky.tf.algos.trpo import TRPO
 from sandbox.rocky.tf.algos.ddpg import DDPG
 from sandbox.rocky.tf.algos.vpg import VPG
-from sandbox.rocky.tf.algos.ppo import PPO
 
 from rllab.baselines.linear_feature_baseline import LinearFeatureBaseline
 from sandbox.rocky.tf.baselines.q_baseline import QfunctionBaseline
@@ -81,7 +80,6 @@ def get_policy(env, algo_name, info, policy_hidden_sizes,
             'qvpg',
             'dspg',
             'dspgoff',
-            'ppo',
             ]:
         if not info['is_action_discrete']:
             if recurrent:
@@ -314,7 +312,6 @@ def get_baseline(env, algo_name, baseline_cls, baseline_hidden_sizes, **kwargs):
             'svpg',
             'qvpg',
             'nafqprop',
-            'ppo',
             ]:
         if baseline_cls == 'linear':
             baseline = LinearFeatureBaseline(env_spec=env.spec)
@@ -520,23 +517,6 @@ def get_algo(env, policy, es, qf, baseline, pf,  max_path_length,
             restore_auto=restore_auto,
         )
         algo_class = 'VPG'
-    elif algo_name in [
-            'ppo',
-            ]:
-        algo = PPO(
-            env=env,
-            policy=policy,
-            baseline=baseline,
-            batch_size=batch_size,
-            max_path_length=max_path_length,
-            n_itr=n_itr,
-            discount=discount,
-            gae_lambda=gae_lambda,
-            learing_rate=learning_rate,
-            scale_reward=scale_reward,
-            save_freq=save_freq,
-            restore_auto=restore_auto,
-        )
         
     print('[get_algo] Instantiating %s.'%algo_class)
     return algo
