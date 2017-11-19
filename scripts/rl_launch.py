@@ -6,11 +6,11 @@ import tempfile
 import click
 
 AMI_MAP = {
-    "us-east-1": "ami-0bf53e71",
+    "us-east-1": "XXX",
 }
 CODE_URL = {
-    'rllabsharp':'https://s3.amazonaws.com/stein-cf/rllabsharp_code.tar.gz',
-    'mergerllab': 'https://s3.amazonaws.com/stein-cf/mergerllabsharp_code.tar.gz'
+    'rllabsharp':'xxx',
+    'mergerllab': 'xxx'
 }
 
 def highlight(x):

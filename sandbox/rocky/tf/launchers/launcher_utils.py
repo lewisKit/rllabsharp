@@ -84,6 +84,9 @@ flags.DEFINE_string('pf_cls', 'Qprop', 'Phi functions structure')
 flags.DEFINE_string('vs_form', None, 'if using vs as part of phi')
 flags.DEFINE_bool('use_gradient_vr', True, 'choice of variance reduction')
 
+if not oos.path.exists('dartml_data'):
+    os.mkdir('dartml_data')
+
 dir_name = os.path.join("dartml_data/", FLAGS.algo_name+'-'+FLAGS.env_name+'-'+str(FLAGS.seed))+'-batch_size='+str(FLAGS.batch_size)+'-learning_rate='+str(FLAGS.learning_rate)+'-max_length=1000'
 
 if FLAGS.algo_name.startswith('svpg'):
