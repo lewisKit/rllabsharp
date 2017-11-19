@@ -1,0 +1,30 @@
+output_formats ['stdout', 'log', 'json', 'tensorboard']
+Logging to exp_ec2/cfpo-Hopper-v1-1-batch_size=5000-learning_rate=0.001-max_length=1000-pf_phi_lam_option=ones-pf_iter=800-baseline=linear-pf_lr=0.0001-pf_cls=Qprop-seed=1-use_gradient_vr=True-vs_form=None-pf_hidden_sizes=100x100
+Setting seed to 1
+Setting seed to 2
+Setting seed to 4
+Setting seed to 3
+observation space: Box(11,)
+action space: Box(3,)
+use_gradient_vr is True
+pf_learning_rate is 0.0001
+observation space: Box(11,)
+action space: Box(3,)
+observation space: Box(11,)
+action space: Box(3,)
+observation space: Box(11,)
+action space: Box(3,)
+observation space: Box(11,)
+action space: Box(3,)
+observation space: Box(11,)
+action space: Box(3,)
+qf is None
+using gradient as variance reduction
+parameter of phi Phinet/obs_h0/W:0, shape=(11, 100)
+parameter of phi Phinet/obs_h0/b:0, shape=(100,)
+parameter of phi Phinet/act_h0/W:0, shape=(3, 100)
+parameter of phi Phinet/act_h0/b:0, shape=(100,)
+parameter of phi Phinet/h1/W:0, shape=(100, 100)
+parameter of phi Phinet/h1/b:0, shape=(100,)
+parameter of phi Phinet/output/W:0, shape=(100, 1)
+parameter of phi Phinet/output/b:0, shape=(1,)
